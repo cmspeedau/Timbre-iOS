@@ -1,0 +1,51 @@
+name: timbre_ios
+description: Modern, high-fidelity music player client for iOS supporting Music Assistant, Subsonic, local files, and 3D Cover Flow.
+publish_to: 'none'
+version: 0.1.0+1
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+  flutter: '>=3.19.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Audio playback engine & system media service
+  just_audio: ^0.9.36
+  audio_service: ^0.18.12
+  audio_session: ^0.1.18
+
+  # State management & reactive architecture
+  flutter_riverpod: ^2.5.1
+  riverpod_annotation: ^2.3.5
+
+  # Local persistence, offline index & caching
+  drift: ^2.16.0
+  sqlite3_flutter_libs: ^0.5.20
+  path_provider: ^2.1.2
+  path: ^1.9.0
+
+  # Networking & Real-time protocol connectors
+  http: ^1.2.0
+  web_socket_channel: ^2.4.5
+  dio: ^5.4.1
+
+  # File handling & local audio import
+  file_picker: ^8.0.0
+
+  # UI, Icons, & Animations
+  cupertino_icons: ^1.0.6
+  cached_network_image: ^3.3.1
+  palette_generator: ^0.3.3+3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+  build_runner: ^2.4.8
+  drift_dev: ^2.16.0
+  riverpod_generator: ^2.4.0
+
+flutter:
+  uses-material-design: true
