@@ -1,6 +1,17 @@
 # Timbre iOS (Flutter)
 
-A modern, high-fidelity music player client built in Flutter for iOS. Timbre combines Roon-grade metadata and playback features with the flexibility of open protocols and serverless local file playback.
+A modern, high-fidelity music player client built in Flutter for iOS. Timbre combines Roon-grade metadata and playback features with the flexibility of open protocols and serverless local file playback — **100% free and open-source forever**, with zero paywalls, subscriptions, or ads.
+
+## Core Philosophy: 100% Free & Open-Source (No Paywalls)
+
+Many popular iOS audio players lock fundamental audiophile features (background audio, lock-screen controls, EQ/DSP, and lossless streaming) behind monthly subscriptions or paywalls. 
+
+**Timbre takes the opposite stance:**
+- **Zero Paywalls:** All features — including bit-perfect background audio, multi-room casting, and DSP — are free for everyone.
+- **No Ads or Telemetry:** Pure, direct connection to your own media sources and local files.
+- **Open Standards:** Built on open protocols (Subsonic/OpenSubsonic API, Music Assistant WebSockets, local document storage).
+
+---
 
 ## Key Features
 
@@ -11,6 +22,7 @@ A modern, high-fidelity music player client built in Flutter for iOS. Timbre com
 - **Audiophile Audio Pipeline:**
   - Bit-perfect lossless playback (FLAC, ALAC, WAV, AAC) using `just_audio` + native `AVPlayer`.
   - Full system integration via `audio_service`: Lock Screen media controls, Control Center, and Dynamic Island.
+  - Unlocked background audio playback (`UIBackgroundModes: audio`) out of the box.
 - **Fluid 3D Cover Flow:**
   - 60–120Hz perspective album browsing in landscape mode and on iPadOS powered by Flutter's Impeller Metal rendering engine.
 - **Anti-Spaghetti Clean Architecture:**
@@ -60,7 +72,7 @@ lib/
 │   ├── errors/
 │   └── theme/
 ├── domain/                     # Pure Dart entities and abstract provider interfaces
-│   ├── models/                 # Track, Album, Artist, QueueItem
+│   ├── models/                 # Track, Album, Artist, AudioFormat, QueueItem
 │   └── providers/              # AudioSourceProvider contract
 ├── data/                       # Concrete provider implementations and offline cache
 │   ├── database/               # Local metadata cache (SQLite / Drift)
@@ -93,16 +105,21 @@ lib/
    cd Timbre-iOS
    ```
 
-2. Install dependencies:
+2. Generate iOS Runner files (if cloning fresh):
+   ```bash
+   flutter create --platforms=ios .
+   ```
+
+3. Install dependencies:
    ```bash
    flutter pub get
    cd ios && pod install && cd ..
    ```
 
-3. Enable Developer Mode on your iPhone:
+4. Enable Developer Mode on your iPhone:
    - On device: **Settings > Privacy & Security > Developer Mode** (toggle ON and reboot).
 
-4. Run on your physical iPhone or Simulator:
+5. Run on your physical iPhone or Simulator:
    ```bash
    flutter devices
    flutter run -d <your-device-id>
@@ -113,3 +130,9 @@ lib/
 ## Roadmap
 
 See [docs/ROADMAP.md](docs/ROADMAP.md) for milestone tracking and upcoming phases.
+
+---
+
+## License
+
+GPL-3.0 or MIT (Open Source).
